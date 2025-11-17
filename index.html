@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal de Onboarding | Canal Exclusivo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="branding">
+      <div class="logo-circle">CN</div>
+      <div>
+        <span class="company">Canal Next</span>
+        <span class="tagline">Onboarding para Apps personalizados</span>
+      </div>
+    </div>
+    <a class="help-link" href="#faq">Precisa de ajuda?</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Canal exclusivo para clientes</p>
+        <h1>Inicie o onboarding e transforme o briefing em um aplicativo impecável.</h1>
+        <p class="hero-subtitle">
+          Preencha o formulário, envie seus arquivos e escolha as funcionalidades desejadas. Nossa equipe
+          receberá tudo em tempo real para iniciar o desenvolvimento com clareza e agilidade.
+        </p>
+        <div class="hero-cta">
+          <a href="#onboarding" class="btn primary">Começar agora</a>
+          <button class="btn ghost" id="scheduleCallBtn">Agendar uma call</button>
+        </div>
+        <ul class="benefits">
+          <li>✔️ Acompanhamento dedicado</li>
+          <li>✔️ Feedback em até 24h</li>
+          <li>✔️ Pipeline seguro para arquivos</li>
+        </ul>
+      </div>
+      <div class="hero-card">
+        <div class="status-chip">Próxima etapa</div>
+        <h2>Diagnóstico do aplicativo</h2>
+        <p>Estamos prontos para receber seu briefing completo. Compartilhe mockups, imagens e selecione as features.</p>
+        <div class="metrics">
+          <div>
+            <span class="metric">72</span>
+            <span class="label">Apps lançados</span>
+          </div>
+          <div>
+            <span class="metric">98%</span>
+            <span class="label">Satisfação</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="onboarding" id="onboarding">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Formulário inteligente</p>
+          <h2>Centralize o briefing em um único envio.</h2>
+          <p>Descreva o propósito do aplicativo, selecione as funcionalidades e anexe todas as referências visuais.</p>
+        </div>
+        <span class="badge">Tempo médio de preenchimento: 7 min</span>
+      </div>
+
+      <div class="card-grid">
+        <form class="card" id="projectForm">
+          <div class="form-group">
+            <label for="projectName">Nome do projeto</label>
+            <input type="text" id="projectName" name="projectName" placeholder="Ex: App Concierge - Rede Prime" required />
+          </div>
+
+          <div class="form-group">
+            <label for="businessGoal">Objetivo principal</label>
+            <textarea id="businessGoal" name="businessGoal" rows="4" placeholder="Descreva o problema que deseja resolver" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="targetAudience">Público-alvo</label>
+            <input type="text" id="targetAudience" name="targetAudience" placeholder="Ex: Clientes corporativos, lojistas, franqueados" required />
+          </div>
+
+          <div class="form-group grid-2">
+            <div>
+              <label for="deadline">Deadline desejado</label>
+              <input type="date" id="deadline" name="deadline" required />
+            </div>
+            <div>
+              <label for="budgetRange">Faixa de investimento</label>
+              <select id="budgetRange" name="budgetRange" required>
+                <option value="">Selecione</option>
+                <option value="1">Até R$ 40 mil</option>
+                <option value="2">R$ 40 mil - R$ 80 mil</option>
+                <option value="3">R$ 80 mil - R$ 150 mil</option>
+                <option value="4">+ de R$ 150 mil</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Selecione as funcionalidades desejadas</label>
+            <div class="feature-grid" id="featureGrid">
+              <!-- checkboxes inserted by JS -->
+            </div>
+            <small id="featureCount">0 funcionalidades selecionadas</small>
+          </div>
+
+          <div class="form-group">
+            <label>Anexe referências em imagem (JPG, PNG)</label>
+            <div class="upload-area" id="uploadArea">
+              <input type="file" id="fileInput" accept="image/*" multiple />
+              <p>Arraste e solte ou clique para enviar</p>
+              <span>Até 10 arquivos • Máx 10MB cada</span>
+            </div>
+            <div class="preview" id="preview"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="additionalNotes">Observações adicionais</label>
+            <textarea id="additionalNotes" name="additionalNotes" rows="3" placeholder="Integrações necessárias, preferências de layout, etc."></textarea>
+          </div>
+
+          <button type="submit" class="btn primary full">Enviar onboarding</button>
+          <p class="disclaimer">Ao enviar você concorda com o acordo de confidencialidade e com o tratamento seguro dos dados.</p>
+        </form>
+
+        <div class="card sidebar">
+          <h3>Checklist rápido</h3>
+          <ul class="checklist">
+            <li><span>Briefing estratégico</span><span class="status-dot green"></span></li>
+            <li><span>Assets visuais</span><span class="status-dot yellow"></span></li>
+            <li><span>Roadmap de features</span><span class="status-dot gray"></span></li>
+          </ul>
+
+          <div class="timeline">
+            <h4>Roadmap pós-envio</h4>
+            <ol>
+              <li><strong>Validação</strong> — Revisamos os requisitos e confirmamos o escopo.</li>
+              <li><strong>Workshop técnico</strong> — Ajustamos integrações, APIs e fluxos.</li>
+              <li><strong>Kickoff</strong> — Entregamos cronograma detalhado e iniciamos o sprint.</li>
+            </ol>
+          </div>
+
+          <div class="contact-card">
+            <p class="eyebrow">Contato dedicado</p>
+            <h4>Laura Menezes</h4>
+            <p>Product Partner</p>
+            <p><strong>Email:</strong> laura@canalnext.com</p>
+            <p><strong>Telefone:</strong> +55 (11) 99999-4567</p>
+            <button class="btn ghost full" id="contactBtn">Falar com o time</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature-card">
+        <h3>Trilha guiada</h3>
+        <p>Receba notificações por e-mail em cada etapa e acompanhe o progresso do projeto via dashboard.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Segurança completa</h3>
+        <p>Upload criptografado com token de sessão e armazenamento temporário para análise rápida.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Integração com seu time</h3>
+        <p>Importe membros e compartilhe o formulário para validação interna antes de enviar.</p>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Perguntas frequentes</p>
+          <h2>Tire dúvidas antes de enviar o onboarding.</h2>
+        </div>
+      </div>
+      <div class="accordion" id="faqList">
+        <article class="accordion-item">
+          <header>
+            <h3>Quais formatos de arquivo são aceitos?</h3>
+            <button aria-label="Alternar pergunta">+</button>
+          </header>
+          <p>Imagens em JPG e PNG até 10MB por arquivo. Em breve suportaremos PDF e vídeos curtos.</p>
+        </article>
+        <article class="accordion-item">
+          <header>
+            <h3>Posso editar o envio depois?</h3>
+            <button aria-label="Alternar pergunta">+</button>
+          </header>
+          <p>Sim, você pode reabrir o formulário com o mesmo link e anexar materiais adicionais.</p>
+        </article>
+        <article class="accordion-item">
+          <header>
+            <h3>Como protegemos os dados?</h3>
+            <button aria-label="Alternar pergunta">+</button>
+          </header>
+          <p>Utilizamos criptografia TLS, autenticação multifator e acesso limitado à equipe do projeto.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Canal Next • Todos os direitos reservados.</p>
+    <div class="footer-links">
+      <a href="#">Política de privacidade</a>
+      <a href="#">Contrato de confidencialidade</a>
+    </div>
+  </footer>
+
+  <div class="dialog" id="dialog">
+    <div class="dialog-content">
+      <h3>Vamos agendar uma call?</h3>
+      <p>Envie um e-mail para <strong>agenda@canalnext.com</strong> com três horários sugeridos.</p>
+      <button class="btn primary" id="closeDialog">Fechar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
